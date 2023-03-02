@@ -1,0 +1,554 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Documentação 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter - Documentação} 
+\backslash
+rhead{
+\backslash
+thepage} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se neste capítulo a documentação de uso do software “SIMULAÇÃO
+ DE SUBSTITUIÇÃO DE FLUIDOS E MODELAGEM AVO – Versão 1.0”.
+ 
+\end_layout
+
+\begin_layout Section
+Documentação do usuário
+\end_layout
+
+\begin_layout Standard
+Descreve-se aqui o manual do usuário, um guia que explica, passo a passo
+ a forma de instalação e uso do software desenvolvido.
+\end_layout
+
+\begin_layout Subsection
+Como rodar o software
+\end_layout
+
+\begin_layout Standard
+Previamente, deve-se assegurar que os dados de perfis de entrada estejam
+ na mesma pasta que o programa.
+ Também é importante ressaltar que os dados de entrada sejam fisicamente
+ coerentes, caso contrário resultados incompatíveis serão obtidos.
+ 
+\end_layout
+
+\begin_layout Standard
+Para a geração de gráficos, o software livre “Gnuplot” deve estar instalado
+ no computador.
+ Com isso, abra o terminal, vá ao diretório onde está o código, compile
+ e execute o programa.
+ Após executar, os procedimentos descritos abaixo são apresentados.
+ 
+\end_layout
+
+\begin_layout Standard
+No cabeçalho do programa, tem-se o nome, a universidade, a data, a versão
+ e os autores do programa.
+ Abaixo o usuário deve optar por realizar uma substituição de fluidos com
+ modelagem AVO, substituição de fluidos a partir de dados de perfis ou obter
+ ajuda.
+ 
+\end_layout
+
+\begin_layout Standard
+Caso digite 1, a primeira opção será executada:
+\end_layout
+
+\begin_layout Itemize
+Primeiramente serão solicitados ao usuário dados de entrada dos fluidos,
+ água e óleo e da rocha e seus componentes principais.
+\end_layout
+
+\begin_layout Itemize
+A matriz rochosa nesse trabalho foi modelada supondo ser composta por dois
+ minerais, então serão solicitado propriedades elásticas referentes a esses
+ dois minerais bem como a fração em volume de cada um na matriz da rocha.
+ A Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:propriedademinerais.."
+
+\end_inset
+
+ apresenta propriedades de alguns minerais constituintes das rochas e pode
+ ser usada como auxílio nessa etapa.
+ 
+\end_layout
+
+\begin_layout Itemize
+Caso a soma das frações dos dois minerais não seja igual a um, uma mensagem
+ de erro será exibida já que seria fisicamente impossível nessa modelagem.
+ Fica a cargo de o usuário prosseguir ou reiniciar a execução do programa.
+ 
+\end_layout
+
+\begin_layout Itemize
+Após a entrada de dados o programa calculará as propriedades dos fluidos
+ e rocha efetivos e utilizará as equações de Gassmann para realizar a substituiç
+ão de fluidos.
+ Com isso serão gerados três gráficos de propriedades do meio com o aumento
+ da saturação de água.
+ 
+\end_layout
+
+\begin_layout Itemize
+As propriedades calculadas para a rocha e fluido efetivos são salvos nos
+ arquivos externos Resultados_rocha.txt e Resultados_fluido.txt respectivamente.
+ Ambos podem ser localizados na mesma pasta do programa.
+\end_layout
+
+\begin_layout Itemize
+O próximo passo é fornecer ao programa os dados para a modelagem AVO.
+\end_layout
+
+\begin_layout Itemize
+De posse de todos os dados, será realizada a modelagem AVO para os três
+ métodos implementados e um gráfico de refletividade por ãngulo será gerado
+ e a simulação encerrada.
+ 
+\end_layout
+
+\begin_layout Standard
+Caso digite 2, a segunda opção será executada:
+\end_layout
+
+\begin_layout Itemize
+Será solicitado ao usuário o nome do arquivo e formato com os dados de perfilage
+m.
+ Os dados devem ter a mesma estrutura de colunas que o mostrado na figura
+ xxxx.
+ Após carregados, os perfis são plotados.
+ 
+\end_layout
+
+\begin_layout Itemize
+Após o carregamento dos perfis, serão realizados os mesmos procedimentos
+ apresentados nos itens a, b e c do caso anterior.
+ 
+\end_layout
+
+\begin_layout Itemize
+Os perfis carregados são salvos na pasta do programa juntamente com os dados
+ calculados como descrito no item e do caso acima.
+ 
+\end_layout
+
+\begin_layout Itemize
+Com isso, será realizada a substituição de fluidos de água para óleo no
+ perfil carregado.
+ Como dito, partimos do pressuposto que o perfil carregado é uma formação
+ totalmente saturada com água e que passará a ser totalmente saturada com
+ óleo.
+ O comportamento da velocidade na camada com a mudança do fluido antes e
+ depois pode ser visto no gráfico gerado, encerrando assim esta simulação.
+ 
+\end_layout
+
+\begin_layout Standard
+Caso digite 3, um menu com opções de ajuda será exibido ao usuário.
+\end_layout
+
+\begin_layout Standard
+Caso digite qualquer número diferente dos relacionados às opções acima,
+ uma mensagem de erro será exibida e o programa reiniciado.
+ 
+\end_layout
+
+\begin_layout Section
+Documentação para desenvolvedor
+\end_layout
+
+\begin_layout Standard
+Apresenta-se nesta seção a documentação para o desenvolvedor, isto é, informaçõe
+s para usuários que queiram modificar, aperfeiçoar ou ampliar este software.
+\end_layout
+
+\begin_layout Subsection
+Dependências
+\end_layout
+
+\begin_layout Standard
+Para compilar o software é necessário atender as seguintes dependências:
+\end_layout
+
+\begin_layout Itemize
+Instalar o compilador g++ da GNU disponível em 
+\begin_inset CommandInset href
+LatexCommand href
+name "http://gcc.gnu.org"
+target "http://gcc.gnu.org"
+
+\end_inset
+
+.
+ Para instalar no GNU/Linux use o comando 
+\family typewriter
+yum install gcc
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+Biblioteca CGnuplot; os arquivos para acesso a biblioteca CGnuplot devem
+ estar no diretório com os códigos do software;
+\end_layout
+
+\begin_layout Itemize
+O software 
+\family typewriter
+gnuplot
+\family default
+, disponível no endereço 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.gnuplot.info/"
+
+\end_inset
+
+, deve estar instalado.
+\end_layout
+
+\begin_layout Subsection
+Documentação usando doxygen
+\end_layout
+
+\begin_layout Standard
+A documentação do código do software foi feita usando o padrão JAVADOC.
+ Depois de documentar o código, o software doxygen foi usado para gerar
+ a documentação do desenvolvendor no formato html.
+ O software doxygen lê os arquivos com os códigos (*.h e *.cpp) e gera uma
+ documentação muito útil e de fácil navegação no formato html.
+ A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Dox"
+
+\end_inset
+
+ apresenta a listagem de classes gerado pelo doxygen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../lyximagens/dox.png
+	lyxscale 10
+	width 100text%
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Listas
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Dox"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sugestões para trabalhos futuros
+\end_layout
+
+\begin_layout Itemize
+Realizar a substituição de fluidos entre água e gás.
+ As funções para o cálculo das propriedades do gás já estão implementadas
+ bastando realizar os mesmos procedimentos feitos entre água e óleo.
+ 
+\end_layout
+
+\begin_layout Itemize
+Procurar na literatura funções que apresentem resultados mais coerentes
+ para o módulo de incompressibilidade do gás.
+ As equações de Batzle-Wang implementadas não apresentaram resultados satisfatór
+ios.
+ 
+\end_layout
+
+\begin_layout Itemize
+Melhorar o sistema de ajuda.
+ 
+\end_layout
+
+\begin_layout Itemize
+Implementar mais equações de refletividade no programa.
+ No programa já está implementada os três métodos mais conhecidos, no entanto
+ existe outros na literatura.
+\end_layout
+
+\begin_layout Itemize
+Otimizar o código.
+\end_layout
+
+\begin_layout Itemize
+Implementar mais atributos AVO, como meios interpretativos para a física
+ das rochas.
+\end_layout
+
+\begin_layout Itemize
+Modelar o óleo como óleo vivo.
+\end_layout
+
+\begin_layout Itemize
+Modelar a matriz das rochas como compostas por mais de dois minerais.
+\end_layout
+
+\begin_layout Chapter
+Referências Bibliográficas
+\end_layout
+
+\begin_layout Itemize
+MAKVO, G.
+ et al.
+ The Rock Physics Handbook.
+ Second Edition.
+ Nova York: Cambridge University Press, 2009.
+ 503 p.
+ 
+\end_layout
+
+\begin_layout Itemize
+SMITH, T.
+ D.
+ et al.
+ Gassmann Fluid Substituition: A Tutorial.
+ GEOPHYSICS, vol.
+ 68, nº 2 (march-april 2003); p.
+ 430–440.
+ 
+\end_layout
+
+\begin_layout Itemize
+NETO, I.
+ A.
+ L.
+ Análise De Avo E Estudo De Viabilidade Sísmica 4d Para Reservatórios Carbonátic
+os..
+ 111 p.
+ Dissertação.
+ UENF.
+ Setembro, 2008.
+ 
+\end_layout
+
+\begin_layout Itemize
+BORÇOI, D.
+ R.
+ Análise Da Assinatura De Avo Em Reservatórios Delgados: Modelagem e Inversão.
+ Monografia.
+ UENF.
+ Julho, 2006.
+ • MARQUES, D.
+ S.
+ Simulação Numérica Da Resposta Sísmica De Modelos Geológicos De Reservatórios
+ De Petróleo E Gás.
+ Monografia.
+ UFF.
+ Dezembro de 2011.
+ • BATZLE, B.; WANG Z.
+ Seismic properties of pore fluids.
+ GEOPHYSICS, vol.
+ 57, Nº 11 (NOVEMBER 1992); P.
+ 1396-1408 .
+ 
+\end_layout
+
+\begin_layout Itemize
+BUENO, A.
+ D.
+ Programação Orientada a Objeto com C++.
+ 2 ed.
+ Novatec Editora.
+ 2013.
+ 
+\end_layout
+
+\begin_layout Itemize
+BACON, M.
+ et al.
+ 3D Seismic Interpretation.
+ Cambridge.
+ 2003.
+ 
+\end_layout
+
+\begin_layout Itemize
+Notas de aula da disciplina Interpretação Integrada Geologia – Geofísica.
+ 
+\end_layout
+
+\begin_layout Itemize
+BATZLE, M.
+ & WANG, Z.
+ Seismic Properties of Pore Fluid.
+ Geophysics.
+ Vol 57 nº11.
+ 1992.
+ Pag 1396-1408.
+ 
+\end_layout
+
+\begin_layout Itemize
+AVSETH, P.
+ et al.
+ Quantitative Seismic Interpretation: Applying Rock Physics Tools to Reduce
+ Interpretation Risk.
+ Cambridge.
+ 2005.
+ 
+\end_layout
+
+\begin_layout Itemize
+PEREIRA, B.
+ Análise Quantitativa de Dados Sísmicos: Inversão e AVO.
+ Dissertação.
+ Universidade de Lisboa.
+ 2014.
+ 
+\end_layout
+
+\end_body
+\end_document

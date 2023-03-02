@@ -1,0 +1,21 @@
+Porosidade: 0.2
+Módulo de incompressibilidade da rocha seca: 10000
+
+PROPRIEDADES DO PRIMEIRO COMPONENTE
+Módulo de incompressibilidade:  37000 MPa
+Densidade:  2.65 g/cm3
+Módulo de cisalhamento:  44000 MPa
+Fração de volume na rocha:  0.8
+
+PROPRIEDADES DO SEGUNDO COMPONENTE
+
+Módulo de incompressibilidade:  30000 MPa
+Densidade:  2.8 g/cm3
+Módulo de cisalhamento:  8000 MPa
+Fração de volume na rocha:  0.2
+
+
+PROPRIEDADES DA MATRIZ DA ROCHA (CONSIDERANDO OS DOIS COMPONENTES)
+Módulo de incompressibilidade:  35475.2 MPa
+Densidade:  2.68 g/cm3
+Módulo de cisalhamento:  36333.9 MPa

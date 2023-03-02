@@ -1,0 +1,3812 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass extbook
+\begin_preamble
+
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children false
+\language brazilian
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style apalike
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter
+\backslash
+space - Elaboração} 
+\backslash
+rhead{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Elaboração
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Elaboração
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Elaboração"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neste capítulo será apresentada a elaboração do 
+\shape italic
+software
+\shape default
+, que é feito através de pesquisas bibliográficas e entrevistas, que nos
+ mostram o que é necessário para a formulação do programa.
+ Ademais, será feita uma análise dos requisitos para o funcionamento do
+ programa, avaliando as condições necessárias para o desenvolvimento de
+ um sistema útil, de forma que satisfaça as necessidades do usuário e que
+ permita, futuramente, uma extensão do 
+\shape italic
+software
+\shape default
+.
+\end_layout
+
+\begin_layout Section
+Análise de domínio
+\end_layout
+
+\begin_layout Standard
+Neste tópico será apresentada uma análise do domínio do sistema a ser desenvolvi
+do.
+ Uma melhor compreensão deste trabalho parte do pressuposto que o usuário
+ possui um conhecimento básico acerca das áreas e sub-áreas apresentadas.
+ 
+\end_layout
+
+\begin_layout Standard
+Uma área relacionada ao desenvolvimento deste 
+\shape italic
+software
+\shape default
+ é a geofísica.
+ É uma área da engenharia de petróleo que atua na exploração de hidrocarbonetos,
+ permitindo avaliar qualitativamente e quantitativamente o potencial de
+ reservatórios.
+ 
+\end_layout
+
+\begin_layout Standard
+As propriedades elásticas das rochas, assim como as propriedades dos fluidos
+ que ocupam os seus poros, são as bases da investigação geofísica, portanto
+ a petrofísica torna-se também uma área fundamental para a criação do 
+\shape italic
+software
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Outra área de grande importância para a formulação do programa será a modelagem
+ numérica computacional, que trabalha com o desenvolvimento de modelos de
+ numéricos para a solução problemas físicos, aplicando esta solução por
+ meio de algoritmos computacionais.
+ 
+\end_layout
+
+\begin_layout Standard
+Uma sub-área envolvida será a sísmica, que baseia-se na medição dos tempos
+ que as ondas sísmicas levam a atravessar as camadas sedimentares.
+ Os estudos envolvem uma fonte de ondas elásticas que se propagam ao longo
+ das rochas e dos reservatórios, sendo depois refletidos para receptores
+ que registam a informação recebida.
+ 
+\end_layout
+
+\begin_layout Standard
+Outra sub-área será a perfilagem de poços, que através de perfis relacionam
+ a profundidade com alguma propriedade física das rochas, permitindo avaliar
+ o sistema petrolífero.
+ Devido ao 
+\shape italic
+software
+\shape default
+ apresentar uma interface de fácil compreensão com o usuário e com uma base
+ teórica relacionada à conteúdos apresentados no meio acadêmico, ele pode
+ ser facilmente utilizado como subsídio para disciplinas derivadas das áreas
+ e sub-áreas acima citadas.
+ 
+\end_layout
+
+\begin_layout Section
+Formulação teórica
+\end_layout
+
+\begin_layout Subsection
+Substituição de Fluidos
+\end_layout
+
+\begin_layout Subsubsection*
+Equações de Gassman
+\end_layout
+
+\begin_layout Standard
+O tipo de fluido presente nos poros das rochas (água, óleo ou gás) influencia
+ de diversas formas as propriedades sísmicas.
+ Com isso, é importante construir maneiras de testar e simular diversos
+ aspectos da saturação.
+ Segundo Smith et al., 2003, a substituição de fluidos é uma importante ferrament
+a no trabalho com atributos sísmicos, pois é capaz de modelar e quantificar
+ vários cenários de fluidos de saturação que modificam uma observação final.
+ 
+\end_layout
+
+\begin_layout Standard
+A técnica mais utilizada para realizar a substituição de fluidos é a aplicação
+ das equações de Gassmann, que são utilizadas para obter o módulo de incompressi
+bilidade da rocha saturada por um fluido, a partit de sua porosidade e dos
+ módulos de incompressibilidade da rocha seca, dos fluidos de saturação
+ e da matriz mineral.
+ 
+\end_layout
+
+\begin_layout Standard
+A aplicação de tais equações é baseada em algumas suposições.
+ Gassmann assume toda rocha como sendo isotrópica, com módulos de incompressibil
+idade e cisalhamento dos constituintes minerais constantes.
+ Além disso, considera-se um comprimento de onda infinito, perfeita conectividad
+e entre os poros e fluido com viscosidade zero.
+ Esse pressuposto significa que uma onda sísmica se propagando na rocha
+ produz um excesso na pressão de poros que pode ser desprezado, pois o fluido
+ tem liberdade e tempo para fluir no espaço poroso, eliminando qualquer
+ gradiente de pressão.
+ 
+\end_layout
+
+\begin_layout Standard
+A rotina de trabalho para essa técnica se inicia com o levantamento das
+ velocidades das ondas P e S para rochas saturadas com o fluido original
+ de onde se pode extrair os módulos de incompressibilidade e de cisalhamento
+ nessas condições.
+ Posteriormente, após a substituição do fluido em saturação, é calculado
+ o módulo de incompressibilidade da rocha saturada pelo novo fluido por
+ Gassmann e as velocidades sísmicas são reconstituídas.
+ As equações matemáticas que descrevem esse processo são apresentadas a
+ seguir.
+ 
+\end_layout
+
+\begin_layout Standard
+Para se modificar um tipo de fluido se faz necessário o conhecimento dos
+ efeitos do fluido original sobre a rocha saturada.
+ Encontrando as propriedades da rocha seca, pode-se então incluir os efeitos
+ do novo fluido para que sejam obtidas as novas propriedades.
+ Para isso, através da principal equação de Gassmann é possível obter o
+ 
+\begin_inset Formula $K_{dry}$
+\end_inset
+
+ módulo de incompressibilidade da rocha seca 
+\begin_inset Formula $\left[Kgf/cm²\right]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+K_{dry}=\frac{K_{sat}\left(\frac{\phi K_{ma}}{K_{fl}}+1,0-\text{\ensuremath{\phi}}\right)-K_{ma}}{\mbox{\ensuremath{\phi}}\frac{K_{ma}}{K_{fl}}+\frac{K_{sat}}{K_{ma}}-1,0-\phi}\label{eq:1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $K_{sat}$
+\end_inset
+
+
+\begin_inset Formula $\left[Kgf/cm²\right]$
+\end_inset
+
+ é o módulo de incompressibilidade da rocha saturada com o fluido original;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $K_{fl}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[Kgf/cm²\right]$
+\end_inset
+
+ é o módulo de incompressibilidade do fluido;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $K_{ma}$
+\end_inset
+
+
+\begin_inset Formula $\left[Kgf/cm²\right]$
+\end_inset
+
+ é o módulo de incompressibildiade da matriz mineral;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\phi$
+\end_inset
+
+ 
+\begin_inset Formula $\left[m\text{³/\ensuremath{m}³}\right]$
+\end_inset
+
+ é a porosidade da rocha;
+\end_layout
+
+\begin_layout Standard
+O módulo de incompressibilidade da rocha saturada, 
+\begin_inset Formula $K_{sat}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[Kgf/cm²\right]$
+\end_inset
+
+, com o fluido inicial pode ser obtido através do conhecimento dos valores
+ das velocidades 
+\begin_inset Formula $V_{p}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+e 
+\begin_inset Formula $V_{s}$
+\end_inset
+
+
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+ e densidade nas condições iniciais.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+K_{sat}=ρ\left(V_{p}^{2}-\frac{4,0}{3,0}V_{s}^{2}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $V_{p}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+ é a velocidade da onda P; 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $V_{s}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+ é a velocidade da onda S; 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\rho$
+\end_inset
+
+ 
+\begin_inset Formula $\left[g/cm\text{³}\right]$
+\end_inset
+
+ é a densidade.
+\end_layout
+
+\begin_layout Standard
+Para o cálculo do módulo de incompressibilidade do fluido é considerado
+ um modelo de fluido efetivo.
+ Este modelo assume que as diferentes fases do fluido estão distribuídas
+ uniformemente no meio poroso permitindo substituí-los por um fluido efetivo
+ cuja compressibilidade é calculada através de uma média harmônica entre
+ os módulos de incompressibilidade de cada fluido 
+\begin_inset Formula $K_{i}$
+\end_inset
+
+
+\begin_inset Formula $\left[kgf/cm\text{³}\right]$
+\end_inset
+
+ e suas saturações correspondentes 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+
+\begin_inset Formula $\left[m\text{³/\ensuremath{m\text{³}}}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+K_{fl}=\left(\sum_{i=1}^{n}\frac{S_{i}}{K_{i}}\right)^{-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde:
+\end_layout
+
+\begin_layout Itemize
+n é o número de fases.
+\end_layout
+
+\begin_layout Standard
+As rochas são compostas por diversos minerais.
+ Para o cálculo do módulo de incompressibilidade da matriz rochosa é necessário
+ o conhecimento dessa composição e da fração dos componentes principais.
+ A Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:propriedademinerais.."
+
+\end_inset
+
+ apresenta diversos minerais comumente encontrados nas rochas e seus valores
+ de módulo de incompressibilidade, cisalhamento e densidade.
+ Assim como o cálculo para os fluidos, será considerado um mineral efetivo
+ cujo módulo de incompressibilidade pode ser calculado através da média
+ de Voigh-Reuss-Hill, apresentada na Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:6"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+K_{voigh}=\left(\sum_{i=1}^{n}f_{i}K_{i}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+K_{reuss}=\left(\sum_{i=1}^{n}\frac{f_{i}}{K_{i}}\right)^{-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+K_{vrh}=\frac{1}{2}\left(K_{voigh}+K_{reuss}\right)\label{eq:6}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[m\text{³/\ensuremath{m\text{³}}}\right]$
+\end_inset
+
+é a fração de cada mineral; 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $K_{i}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[Kgf/cm\text{³}\right]$
+\end_inset
+
+ é o módulo de incompressibilidade de cada mineral;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n$
+\end_inset
+
+ é o número de minerais constituintes.
+\end_layout
+
+\begin_layout Standard
+A porosidade pode ser obtida através de dados de perfilagem ou por análises
+ em amostras de testemunhos.
+ Obtido o módulo de incompressibilidade para rocha seca 
+\begin_inset Formula $K_{dry}$
+\end_inset
+
+
+\begin_inset Formula $\left[Kgf/cm\text{³}\right]$
+\end_inset
+
+ podemos rearranjar a Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:1"
+
+\end_inset
+
+ de forma que fique em função do módulo de incompressibilidade da rocha
+ saturada e assim modificar as condições para o novo fluido.
+ Para a nova condição de saturação, valores dos módulos de incompressibilidade
+ para a rocha seca e para a matriz serão os mesmos, bastando modificar o
+ módulo de incompressibilidade do fluido influenciado pela nova condição
+ de saturação.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+K_{sat}=K_{dry}+\frac{\left(1,0-\frac{K_{dry}}{K{}_{ma}}\right)^{2}}{\frac{\phi}{K_{fl}}+\frac{\phi}{K_{ma}}-\frac{K{}_{dry}}{K{}_{ma}^{2}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assim, as novas velocidades podem ser calculadas pelas Equações 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:8"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:9"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{p}=\sqrt{\frac{K_{sat}+\frac{4,0}{3,0}μ}{ρ}}\label{eq:8}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{s}=\sqrt{\frac{μ}{ρ}}\label{eq:9}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde 
+\begin_inset Formula $\mu$
+\end_inset
+
+ 
+\begin_inset Formula $\left[MPa\right]$
+\end_inset
+
+é o módulo de cisalhamento, que pode ser calculado pela Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:10"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+μ=ρV_{s}^{2}\label{eq:10}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Alternativamente, os módulos de incompressibilidade e de cisalhamento para
+ a rocha seca podem ser obtidos pela correlação proposta por Murphy et.
+ al (1993) para arenitos limpos ou pela correlação de Nur et.
+ al (1995) apresentadas respectivamente nas Equações 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:11"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:12"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:13"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:14"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+K_{dry}=38,18\left(1,0-3,34\text{\ensuremath{\phi}}+1,95\mbox{\ensuremath{\phi^{2}}}\right)\label{eq:11}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+μ=42,65\left(1,0-3,48\mbox{\ensuremath{\phi}}+2,19\text{\ensuremath{\phi}}^{2}\right)\label{eq:12}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+μ=μ_{ma}\left(1,0-\frac{\text{\ensuremath{\phi}}}{\text{\ensuremath{\phi_{c}}}}\right)\label{eq:13}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+K{}_{dry}=K_{ma}\left(1,0-\frac{\phi}{\phi{}_{c}}\right)\label{eq:14}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $μ{}_{ma}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[MPa\right]$
+\end_inset
+
+ é o módulo de cisalhamento da matriz que pode ser obtido de fórmula análoga
+ ao módulo de incompressibilidade através das equações de Voigh-Reuss-Hill.
+ A Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:propriedademinerais.."
+
+\end_inset
+
+ apresenta diferentes módulos de cisalhamentos para minerais formadores
+ das rochas.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mbox{\ensuremath{\phi_{c}}}$
+\end_inset
+
+
+\begin_inset Formula $\left[m\text{³/\ensuremath{m}³}\right]$
+\end_inset
+
+ é a porosidade critica da rocha, ou seja, limite máximo de porosidade que
+ pode constituir uma rocha, pois, além disso ela é descaracterizada tornando-se
+ fragmentos friáveis e sedimentos.
+ A Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:porosidadecritica.."
+
+\end_inset
+
+ apresenta a porosidade crítica média para diferentes rochas.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Propriedades dos minerais
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:propriedademinerais.."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mineral
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Incompressibilidade (GPa)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cisalhamento (GPa)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Densidade (gm/cm³)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quartzo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+37,00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+44,00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,65
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Feldspato
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+37,50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15,00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,62
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Plagioclásio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+75,60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25,60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,63
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Argilominerais
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30,00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8,20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,80
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Calcita
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+76,80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+32,00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,71
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dolomita
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+94,90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+45,00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,87
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anidrita
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+44,8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+29,1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,98
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pirita
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+147,4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+135,5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4,93
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hematita
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100,2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+95,2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5,24
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Porosidade crítica de algumas rochas
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:porosidadecritica.."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rochas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porosidade Crítica
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arenitos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+40%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Calcários
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+60%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dolomitos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+40%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pomes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+80%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Chalks
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+65%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rochas ígneas crackeadas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para a obtenção das novas velocidades, descritas nas Equações 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:8"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:9"
+
+\end_inset
+
+, deve-se estimar a densidade da rocha saturada após a substituição do fluido
+ usando o modelo de densidade efetiva, apresentada na Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:15"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+ρ=ρ_{ma}\left(1,0-\text{\ensuremath{\phi}}\right)+ρ_{fl}\phi\label{eq:15}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $ρ_{ma}$
+\end_inset
+
+
+\begin_inset Formula $\left[g/cm\text{³}\right]$
+\end_inset
+
+ é a densidade da matriz; 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $ρ{}_{fl}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[g/cm\text{³}\right]$
+\end_inset
+
+é a densidade do fluido.
+\end_layout
+
+\begin_layout Standard
+Como dito, a matriz pode não ser considerada formada por um só mineral,
+ portanto, se faz necessário estimar sua densidade através de uma média
+ ponderada considerando a fração de cada mineral e sua densidade.
+ As densidades dos principais minerais formadores das rochas estão expostas
+ na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:propriedademinerais.."
+
+\end_inset
+
+ e a densidade da matriz pode ser econtrada pela Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:16"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+ρ_{ma}=\left(\sum_{i=1}^{n}f_{i}ρ_{i}\right)\label{eq:16}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A densidade do fluido depende das fases que compõem o fluido, como água,
+ óleo e gás e suas proporções, podendo ser calculada através da Equação
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:17"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+ρ_{fl}=\left(\sum_{i=1}^{n}S_{i}ρ_{i}\right)\label{eq:17}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Com isso temos todas as equações necessárias para realizar o processo de
+ substituição de fluidos segundo Gassmann.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Modelo de Batzle & Wang para estimativa das propriedades dos fluidos
+\end_layout
+
+\begin_layout Standard
+Nesse tópico serão apresentadas um conjunto de equações propostas por Batzle
+ & Wang (1992) que complementam o trabalho proposto por Gassmann.
+ Os autores correlacionam relações termodinâmicas com dados empíricos para
+ estimar as propriedades dos fluidos nos poros da rocha.
+ As correlações estão divididas em propriedades para água salgada, gás e
+ óleo.
+\end_layout
+
+\begin_layout Description
+Água
+\end_layout
+
+\begin_layout Standard
+A densidade da água salgada ou salmoura 
+\begin_inset Formula $\rho_{b}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[g/cm\text{³}\right]$
+\end_inset
+
+ é função da temperatura 
+\begin_inset Formula $\left[\text{\ensuremath{\text{°\ensuremath{C}}}}\right]$
+\end_inset
+
+, pressão 
+\begin_inset Formula $\left[MPa\right]$
+\end_inset
+
+, densidade da água pura 
+\begin_inset Formula $\left[g/cm\text{³}\right]$
+\end_inset
+
+ e salinidade em porcentagem.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+ρ_{b} & =ρ_{w}+S\{0,668+0,44S+10^{-6}[300,0P-2400,0PS
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align}
++ & T\left(80,0+3,0T-3300,0S-13,0P+47,0PS\right)]\}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por sua vez a densidade da água pura pode ser calculada pela Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:19"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+ρ_{w} & =1,0+10^{-6}\left(-80,0T-3,3T^{2}+0,00175T^{3}+489,0P-2,0TP\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+\begin_inset Formula 
+\begin{equation}
++10^{-6}[0,016T^{2}P-1,3\cdot10^{-5}T^{3}P-(0,333P^{2}-0,02TP^{2})]\label{eq:19}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A velocidade acústica 
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+ para a salmoura obtém-se pela Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:20"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+V_{b} & =V_{w}+S\left(1170,0-9,6T+0,055T^{2}-8,5\cdot10^{-5}T^{3}+2,6P-0,0029TP-0,0476P^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+\begin_inset Formula 
+\begin{equation}
++S^{1,5}\left(780,0-10,0P+0,16P^{2}\right)-1820,0S^{2}\label{eq:20}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde 
+\begin_inset Formula $V_{w}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+ representa a velocidade acústica da água doce em m/s dada pela Equação
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:21"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{w}=\sum_{i=0}^{4}\sum_{j=0}^{3}w_{ij}T^{i}P^{j}\label{eq:21}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os valores dos coeficientes 
+\begin_inset Formula $w_{ij}$
+\end_inset
+
+ são apresentados na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:wij.."
+
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabela com os valores de 
+\begin_inset Formula $w{}_{ij}$
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:wij.."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{0,0}$
+\end_inset
+
+=1402,85
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{0,2}$
+\end_inset
+
+=3,347 x
+\begin_inset Formula $10^{-3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{1,0}$
+\end_inset
+
+=4,871
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{1,2}$
+\end_inset
+
+=1,739 x
+\begin_inset Formula $10^{-4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{2,0}$
+\end_inset
+
+=-0,04783
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{2,2}$
+\end_inset
+
+=-2,135 x
+\begin_inset Formula $10^{-6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{3,0}$
+\end_inset
+
+=1,487 x
+\begin_inset Formula $10^{-4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{3,2}$
+\end_inset
+
+=-1,455 x
+\begin_inset Formula $10^{-8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{4,0}$
+\end_inset
+
+=-2,197 x
+\begin_inset Formula $10^{-7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{4,2}$
+\end_inset
+
+=5,23 x
+\begin_inset Formula $10^{-11}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{0,1}$
+\end_inset
+
+=1,524
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{0,3}$
+\end_inset
+
+=-1,197 x
+\begin_inset Formula $10^{-5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{1,1}$
+\end_inset
+
+=-0,0111
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{1,3}$
+\end_inset
+
+=-1,628 x
+\begin_inset Formula $10^{-6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{2,1}$
+\end_inset
+
+=2,747 x
+\begin_inset Formula $10^{-4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{2,3}$
+\end_inset
+
+=1,237 x 
+\begin_inset Formula $10^{-8}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{3,1}$
+\end_inset
+
+=-6,503 x
+\begin_inset Formula $10^{-7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{3,3}$
+\end_inset
+
+=1,327 x 
+\begin_inset Formula $10^{-10}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{4,1}$
+\end_inset
+
+=7,987 x
+\begin_inset Formula $10^{-10}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{4,3}$
+\end_inset
+
+=-4,614 x 
+\begin_inset Formula $10^{-11}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por fim, pode-se calcular o módulo de incompressibilidade para a salmoura
+ 
+\begin_inset Formula $K_{b}$
+\end_inset
+
+ [MPa]:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+K_{b}=V_{b}^{2}ρ_{b}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Gás
+\end_layout
+
+\begin_layout Standard
+O gás é caracterizado por sua gravidade específica 
+\begin_inset Formula $G$
+\end_inset
+
+ que representa a razão entre a densidade do gás e do ar a 15,6°C e pressão
+ atmosférica variando de [0.56] Pa para metanos a 1.8 [Pa] para gases pesados
+ (Mavko et al.,1998).
+\end_layout
+
+\begin_layout Standard
+O primeiro passo é o cálculo da temperatura absoluta do gás 
+\begin_inset Formula $\left[\text{°\ensuremath{K}}\right]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{a}=T+273,15
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde 
+\begin_inset Formula $T$
+\end_inset
+
+
+\begin_inset Formula $\left[\text{°\ensuremath{C}}\right]$
+\end_inset
+
+ é a temperatura.
+ 
+\end_layout
+
+\begin_layout Standard
+Para o cálculo das pseudo-propriedade dos gás, usamos as Equações 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:24"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:25"
+
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T_{r}=\frac{T_{a}}{94,72+170,75G}\label{eq:24}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P_{r}=\frac{P}{4892,0-0,4048G}\label{eq:25}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O fator de compressibilidade 
+\begin_inset Formula $Z$
+\end_inset
+
+ pode ser calculado como função das propriedades pseudo-reduzidas da substância,
+ mostrado a seguir.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Z=aP_{r}+b+cd
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+d=exp\left\{ -\left[0,45+8,0\left(0,56-\frac{1}{T_{r}^{2}}\right)^{2}\right]\frac{P_{r}^{1,2}}{T_{r}}\right\} 
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+c=0,109\left(3,85-T_{r}\right)^{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+b=0,642T_{r}-0,007T_{r}^{4}-0,52
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+a=0,03+0,00527\left(3,5-T_{r}\right)^{3}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Com isso a densidade do gás pode ser calculada, pela Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:31"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+ρ_{g}=\frac{28,8GP}{ZRT}\label{eq:31}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde a constante do gás para essas condições é 
+\begin_inset Formula $R$
+\end_inset
+
+ = 8,31441 [J/mol.K] .
+\end_layout
+
+\begin_layout Standard
+Para calcular o módulo de incompressibilidade do gás são usadas as seguintes
+ relações: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+K_{g}=\frac{Pγ}{1-\frac{P_{r}}{Z}f}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+γ=0,85+\frac{5,6P_{r}}{P_{r}+2}+\frac{27,1}{\left(P_{r}+3,5\right)^{2}}-8,7e^{-0,65(P_{r}+1)}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f=cdm+a
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+m=1,2\left\{ -\left[0,45+8,0\left(0,56-\frac{1}{T_{r}}\right)^{2}\right]\frac{P_{r}^{0,2}}{T_{r}}\right\} 
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+E por fim, calcula-se a velocidade acústica do gás 
+\begin_inset Formula $V_{g}$
+\end_inset
+
+[m/s].
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{g}=\sqrt{\frac{K_{g}}{ρ_{g}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Óleo
+\end_layout
+
+\begin_layout Standard
+Óleos naturais ou óleos crus são substâncias complexas variando desde líquidos
+ leves a muito pesados.
+ Com isso, a densidade de óleos em condições de reservatório podem variar
+ de 0,5 a 1 [g/cm³] sendo mais comumente encontrados óleos entre 0.7 e 0.8
+ [g/cm³] (Mavko et al.
+ 1998).
+ A densidade de um óleo estabelecida pelo 
+\shape italic
+Instituto Americano Petróleo
+\shape default
+ pode ser definida como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+API=\frac{141,5}{ρ_{o}}-131,5\label{eq:37}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $ρ{}_{o}$
+\end_inset
+
+ [g/cm³]é a densidade do óleo à 15,6ºC e pressão atmosférica.
+ 
+\end_layout
+
+\begin_layout Standard
+Os valores de densidade API variam de aproximadamente 10 para óleos muito
+ pesados a 60 para óleos leves.
+ A densidade do óleo morto, ou seja, óleo sem gás dissolvido pode ser estimada
+ por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+ρ_{d}=\frac{ρ_{p}}{0,972+\left(3,81\cdot10^{-4}\right)\left(T+17,78\right)^{1,175}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Em que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+ρ_{p}=ρ_{o}+(0,00277P-1,71\cdot10^{-7}P^{3})(ρ_{o}-1,15)^{2}+3,49\cdot10^{-4}P
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde 
+\begin_inset Formula $\rho_{p}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[g/cm\text{³}\right]$
+\end_inset
+
+ é a densidade do óleo subsaturado.
+\end_layout
+
+\begin_layout Standard
+Rearranjando a Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:37"
+
+\end_inset
+
+, obtém-se:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+ρ_{o}=\frac{API+131,5}{141,5}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para o óleo vivo (óleo com gás dissolvido), a densidade é função da pressão,
+ temperatura e composição do óleo (Irineu, 2008).
+ Logo, temos as seguintes relações para o cálculo da densidade do óleo vivo
+ 
+\begin_inset Formula $\rho_{l}$
+\end_inset
+
+
+\begin_inset Formula $\left[g/cm\text{³}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+ρ_{l}=\frac{ρ_{o}+0,0012GR_{l}}{B_{l}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R_{l}=2,03\left[Pexp\left(0,02878API-0,00377T\right)\right]^{1,205}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+B_{l}=0,972+0,0038\left[2,4R_{g}\left(\frac{G}{ρ_{o}}\right)^{0,5}+T+1,78\right]^{1,175}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $R_{g}$
+\end_inset
+
+
+\begin_inset Formula $\left[m\text{³/\ensuremath{m\text{³}}}\right]$
+\end_inset
+
+ é a razão de solubilidade de gás em óleo 
+\end_layout
+
+\begin_layout Itemize
+P 
+\begin_inset Formula $\left[MPa\right]$
+\end_inset
+
+ é a pressão
+\end_layout
+
+\begin_layout Itemize
+T 
+\begin_inset Formula $\left[\text{°C}\right]$
+\end_inset
+
+ é a temperatura.
+\end_layout
+
+\begin_layout Standard
+Segundo Batzle & Wang, a velocidade 
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+ para óleos com gás dissolvidos será:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{o}=2096,0\left(\frac{ρ'}{2,6-ρ'}\right)^{0,5}-3,7T+4,64P+0,0038\left[2,4R_{g}\left(\frac{G}{ρ_{o}}\right)^{0,5}+T+1,78\right]^{1,175}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde a pseudo-densidade 
+\begin_inset Formula $\rho^{'}$
+\end_inset
+
+
+\begin_inset Formula $\left[g/cm\text{³}\right]$
+\end_inset
+
+, calcula-se por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+ρ'=ρ_{o}\frac{(1+0,001R_{l})^{-1}}{B_{l}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pode-se calcular 
+\begin_inset Formula $V_{o}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+ em termos de API, por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+V_{o}=15450,0(77,1+API)^{-0,5}-3,7T+4,64P+0,0115\left[4,12\left(\frac{1,08}{ρ'-1}\right)^{0,5}\right]TP
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por fim, o módulo de incompressibilidade do óleo vivo 
+\begin_inset Formula $K_{l}\left[MPa\right]$
+\end_inset
+
+ é dado por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+K_{l}=V_{o}^{2}ρ_{l}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Modelagem AVO (Amplitude versus offset)
+\end_layout
+
+\begin_layout Standard
+A modelagem AVO se processa através da integração das propriedades sísmicas
+ e petrofísicas da rocha, de tal forma que se obtém a variação do coeficiente
+ de reflexão com o ângulo de incidência, o que possibilita o estudo da resposta
+ AVO para um determinado meio.
+\end_layout
+
+\begin_layout Standard
+Segundo Castagna & Backus (1993), a variação dos coeficientes de reflexão
+ e de transmissão com o ângulo de incidência, conhecida como variação da
+ refletividade com afastamento, é o principal objeto de estudo da análise
+ AVO.
+ Essa variação é uma função das propriedades sísmicas das rochas, que por
+ sua vez são dependentes das propriedades físicas do meio (litologia, porosidade
+ e tipo de fluido).
+ Correlacionando alguns parâmetros sísmicos da rocha, como a velocidade
+ da onda compressional 
+\begin_inset Formula $Vp$
+\end_inset
+
+
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+ e velocidade da onda cisalhante 
+\begin_inset Formula $Vs$
+\end_inset
+
+ 
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+, e também com a densidade 
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\begin_inset Formula $\left[g/cm\text{³}\right]$
+\end_inset
+
+ é possível determinar o coeficiente de reflexão e transmissão de uma onda
+ plana incidente sobre uma interface plana.
+ 
+\end_layout
+
+\begin_layout Standard
+Os coeficientes são, formalmente, obtidos pela partição de amplitudes que
+ ocorre quando uma onda plana incide sobre uma interface plana separando
+ dois meios de parêmetros elásticos distintos.
+ Quando a incidência da onda plana é normal à superfície plana, o coeficiente
+ de reflexão na interface pode ser obtido através do contraste das impedâncias
+ acústicas das camadas.
+ A impedância acústica é calculada através da velocidade da onda compressional,
+ pela seguinte equação:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Ip=V_{p}ρ
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde 
+\begin_inset Formula $Ip$
+\end_inset
+
+ 
+\begin_inset Formula $\left[m/s.g/cm\text{³}\right]$
+\end_inset
+
+é a impedância acústica da onda P.
+ 
+\end_layout
+
+\begin_layout Standard
+O coeficiente de reflexão acústico 
+\begin_inset Formula $Rp$
+\end_inset
+
+ pode ser calculado quando há uma incidência normal da onda compressional,
+ por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Rp=\frac{Ip_{2}-Ip_{1}}{Ip_{2}+Ip_{1}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Em que 
+\begin_inset Formula $Ip_{1}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[m/s.g/cm\text{³}\right]$
+\end_inset
+
+ é a impedância acústica da onda compressional na camada anterior e 
+\begin_inset Formula $Ip_{2}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[m/s.g/cm\text{³}\right]$
+\end_inset
+
+ é a impedância acústica na camada posterior.
+\end_layout
+
+\begin_layout Standard
+No entanto, quando a incidência da onda plana na interface entre dois meios
+ é oblíqua, o cálculo do coeficiente de reflexão torna-se mais complexo.
+\end_layout
+
+\begin_layout Paragraph
+Modelo de Zoeppritz
+\end_layout
+
+\begin_layout Standard
+Em 1919 Zoeppritz propôs uma solução do problema do coeficiente de reflexão
+ e de transmissão em função do ângulo de incidência e das propriedades elásticas
+ do meio.
+ A referida solução relaciona o ângulo de incidência e as respectivas amplitudes
+ das ondas P e S refletidas e refratadas.
+\end_layout
+
+\begin_layout Standard
+O modelo de Zoeppritz considera os seguintes parâmetros:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $θ_{1}$
+\end_inset
+
+° é o ângulo de incidência da onda P ;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $θ_{2}$
+\end_inset
+
+° é o ângulo de refração da onda P ;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $ψ_{1}$
+\end_inset
+
+° é o ângulo de reflexão da onda S ;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $ψ_{2}$
+\end_inset
+
+° é o ângulo de refração da onda S ;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $α_{1}$
+\end_inset
+
+
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+ é a velocidade da onda P incidente ;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $α_{2}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+é a velocidade da onda P refratada; 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $β_{1}\text{°}$
+\end_inset
+
+é o ângulo de reflexão da onda S ;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $β_{2}$
+\end_inset
+
+° é o ângulo de refração da onda S .
+\end_layout
+
+\begin_layout Standard
+Considerando a Lei de Snell, em que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+p=\frac{senθ_{1}}{α_{1}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde 
+\begin_inset Formula $p$
+\end_inset
+
+ é o parâmetro de raio.
+\end_layout
+
+\begin_layout Standard
+Para obter o coeficiente de reflexão da onda P 
+\begin_inset Formula $\left(R_{pp}\right)$
+\end_inset
+
+, utilizamos a equação de Zoeppritz, em função das variáveis a seguir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R_{pp}=\frac{\left[\left(b\frac{\cos\theta_{1}}{\alpha_{1}}-c\frac{\cos\theta_{2}}{\alpha_{2}}\right)F-\left(a+d\frac{\cos\theta_{1}\cos\varPsi_{2}}{\alpha_{1}\beta_{2}}\right)Hp^{2}\right]}{D}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+a=\left(1,0-2,0\beta_{2}^{2}p^{2}\right)-\rho\left(1,0-2,0\beta_{1}^{2}p^{2}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+b=\left(1,0-2,0\beta_{2}^{2}p^{2}\right)+2,0\rho_{1}\beta_{1}^{2}p^{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+c=2,0\rho_{2}\beta_{1}^{2}p^{2}+\rho\left(1,0-2,0\beta_{1}^{2}p^{2}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+d=2,0\left(\rho_{2}\beta_{2}^{2}-\rho_{1}\beta_{1}^{2}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E=b\frac{\cos\theta_{1}}{\alpha_{1}}+c\frac{\cos\theta_{2}}{\alpha_{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F=b\frac{\cos\Psi_{1}}{\beta_{1}}+c\frac{\cos\Psi_{2}}{\beta_{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G=a-d\frac{\cos\theta_{1}}{\alpha_{1}}\frac{\cos\Psi_{2}}{\beta_{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H=a-d\frac{\cos\theta_{2}}{\alpha_{2}}\frac{\cos\Psi_{1}}{\beta_{1}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+D=EF+GHp^{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Modelo de Aki and Richards
+\end_layout
+
+\begin_layout Standard
+Visando simplificar a equação de Zoeppritz, Aki and Richards propuseram
+ uma solução reduzida para o ângulo incidente e o coeficiente de reflexão,
+ para utilização em aplicações práticas das mesmas (Castagna & Backus, 1993).
+ 
+\end_layout
+
+\begin_layout Standard
+A equação de Aki and Richards trata-se de uma aproximação linear da equação
+ de Zoeppritz, como mostram nas seguintes equações:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Vp=\frac{\left(Vp_{1}+Vp_{2}\right)}{2,0}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\rho=\frac{\left(\rho_{1}+\rho_{2}\right)}{2,0}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Vs=\frac{\left(Vs_{1}+Vs_{2}\right)}{2,0}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta Vp=Vp_{2}-Vp_{1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta Vs=Vs_{2}-Vs_{1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta\rho=\rho_{2}-\rho_{1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+p=\frac{\sin\theta}{Vp_{1}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\theta=\frac{\left(\theta_{1}+\theta_{2}\right)}{2,0}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde:
+\end_layout
+
+\begin_layout Itemize
+p é o parâmetro do raio; 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Vp_{1}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+ é a velocidade da onda 
+\begin_inset Formula $p$
+\end_inset
+
+ no meio 1; 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Vs_{1}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+ é a velocidade da onda 
+\begin_inset Formula $s$
+\end_inset
+
+ no meio 1; 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Vp_{2}$
+\end_inset
+
+
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+ é a velocidade da onda 
+\begin_inset Formula $p$
+\end_inset
+
+ no meio 1; 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Vs_{s}$
+\end_inset
+
+
+\begin_inset Formula $\left[m/s\right]$
+\end_inset
+
+ é a velocidade da onda 
+\begin_inset Formula $s$
+\end_inset
+
+ no meio 1; 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\rho_{1}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[g/cm\text{³}\right]$
+\end_inset
+
+ é a densidade do meio 1; 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\rho_{2}$
+\end_inset
+
+ 
+\begin_inset Formula $\left[g/cm\text{³}\right]$
+\end_inset
+
+ é a densidade do meio 2.
+ 
+\end_layout
+
+\begin_layout Standard
+Após encontrar os valores das variáveis, utiliza-se a equação de Aki and
+ Richards:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Rpp\left(\theta\right)\approxeq\frac{\left(1,0-4,0p^{2}Vs^{2}\right)\Delta\rho}{2,0\rho}+\frac{\Delta Vp}{2,0\cos\theta^{2}Vp}-4,0p^{2}Vs^{2}\frac{\Delta Vs}{Vs}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Modelo de Shuey
+\end_layout
+
+\begin_layout Standard
+Da equação de Aki & Richards obteve-se aproximação de Shuey, com os parâmetros:
+ intercept 
+\begin_inset Formula $R_{0}$
+\end_inset
+
+ e gradiente 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ Para isso, utilizamos as mesmas correlações que foram utilizadas em Aki
+ & Richards.
+ Após obter esses valores, calculamos o intercept 
+\begin_inset Formula $R_{0}$
+\end_inset
+
+ e o gradiente 
+\begin_inset Formula $G$
+\end_inset
+
+, por meio das seguintes equações: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+R_{0}=\frac{\left(\frac{\Delta Vp}{Vp}+\frac{\Delta\rho}{\rho}\right)}{2,0}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+G=\frac{\Delta Vp}{2,0Vp}-\frac{2,0Vs^{2}}{Vp^{2}}\left(\frac{\Delta\rho}{\rho}+\frac{2,0\Delta Vs}{Vs}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assim, por último, encontramos o coeficiente de reflexão em função do ângulo
+ incidente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Rpp\left(\theta\right)=R_{0}+G\sin^{2}\theta
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Interpretação dos atributos AVO
+\end_layout
+
+\begin_layout Standard
+Rutherford & Williams (1989) definiram três classes distintas de anomalias
+ de AVO.
+ A Classe I ocorre quando o intercepto AVO é fortemente positivo, acarretando
+ um decréscimo na magnitude da amplitude versus o afastamento e possível
+ inversão de polaridade nos afastamentos longos, visto que a impedância
+ da camada inferior é maior que a da camada superior.
+ Neste caso A é positivo e B é negativo sendo plotados no quadrante IV.
+ Pode representar arenitos consolidados com hidrocarbonetos, entretanto
+ rochas desse tipo são pouco sensíveis ao fluido, podendo levar a ambiguidade
+ na interpretação.
+\end_layout
+
+\begin_layout Standard
+Na Classe II, pode apresentar um aumento ou diminuição da amplitude com
+ o afastamento, o intercepto AVO pode ser positivo ou negativo, pode haver
+ mudança de sinal nos afastamentos curtos a médios e a impedâmcia acústica
+ dos meios é quase a mesma.
+ Pode representar arenitos limpos com hidrocarbonetos.
+\end_layout
+
+\begin_layout Standard
+Na Classe III, conhecida como AVO clássico, o coeficiente de reflexão da
+ incidência normal é negativo, assim como o gradiente, e tem-se o aumento
+ da magnitude da amplitude com o afastamento, sendo plotados no quadrante
+ III.
+ Anomalia desse tipo podem ser indicativo de arenitos inconsolidados com
+ gás.
+\end_layout
+
+\begin_layout Standard
+Alem dessas três classes, pode ocorrer ainda a Classe IV de anomalia AVO,
+ como proposto por Castagna & Swan (1997), conforme Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:respostaAVO"
+
+\end_inset
+
+.
+ A Classe IV tem um coeficiente de reflexão normal negativo e o gradiente
+ positivo, e tem-se a diminuição da magnitude da amplitude com o afastamento,
+ sendo plotada no II quadrante.
+ A anomalia desse tipo é rara e pode ocorrer com arenitos com gás capeados
+ por folhelhos.
+\end_layout
+
+\begin_layout Standard
+Na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:classesAVO.."
+
+\end_inset
+
+ encontra-se o resumo do comportamento AVO para as Classes I, II, III e
+ IV.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comportamento AVO para as várias classes
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:classesAVO.."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="6">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Classe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Impedância Relativa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quadrante
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Resposta AVO
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+I
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maior que a unidade superior
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IV
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Diminui
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+II
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Próxima da unidade superior
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+II, III ou IV
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aumenta ou Diminui
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+III
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Menor que a unidade superior
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+III
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aumenta
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IV
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Menor que a unidade superior
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IV
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Diminui
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../lyximagens/AVO.jpg
+	lyxscale 10
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Classificação da resposta AVO
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:respostaAVO"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de pacotes
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-pacotes"
+
+\end_inset
+
+ temos o diagrama de pacotes para elaboração do software, como descrito
+ na análise de domínio.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../lyximagens/pacotes.png
+	lyxscale 10
+	width 100text%
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de pacotes do simulador
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-pacotes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
